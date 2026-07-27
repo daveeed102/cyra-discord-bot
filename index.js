@@ -11,14 +11,20 @@ const {
 } = require("discord.js");
 
 const CONFIG = {
-  discordToken: "MTUzMTA4NjExNDE0MjU1NjI0MA.G2zNN_.Co5-5bpalylAgbN5nJiqSnnNuAMizK58bEWOPg",
-  appId: "1531086114142556240",
-  serverId: "1069682722982875337",
-  adminChannelId: "1069682723884630030",
-  xaiApiKey: "xai-3pMlgnX4c4wawCnzl44QXoRT79dn2QaALihRhsdGh4p6Jse5j2yN91tAu1SsACJduQH0HKG821xqBRVJ",
+  discordToken: process.env.DISCORD_TOKEN,
+  xaiApiKey: process.env.XAI_API_KEY,
+  appId: process.env.DISCORD_APP_ID,
+  serverId: process.env.DISCORD_SERVER_ID,
+  adminChannelId: process.env.ADMIN_CHANNEL_ID,
+
   model: process.env.XAI_MODEL || "grok-4.5",
-  messageLimit: 75,
-  maxOutputTokens: 1800,
+
+  messageLimit: Number(process.env.CONTEXT_MESSAGE_LIMIT || 75),
+
+  maxOutputTokens: Number(
+    process.env.MAX_OUTPUT_TOKENS || 1800
+  ),
+
   port: Number(process.env.PORT || 3000),
 };
 
