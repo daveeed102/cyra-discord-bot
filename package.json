@@ -1,6 +1,6 @@
 {
   "name": "cyra-discord-bot",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,6 @@
     "node": "20.x"
   },
   "dependencies": {
-    "discord.js": "14.22.1"
+    "discord.js": "^14.22.1"
   }
 }
