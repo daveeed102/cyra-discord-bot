@@ -1,15 +1,17 @@
 {
   "name": "cyra-discord-bot",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "private": true,
+  "description": "Cyra Discord fact-checking bot with xAI web search",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "check": "node --check index.js"
   },
   "engines": {
     "node": "20.x"
   },
   "dependencies": {
-    "discord.js": "^14.22.1"
+    "discord.js": "14.22.1"
   }
 }
