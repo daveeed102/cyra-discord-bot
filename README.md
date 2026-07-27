@@ -1,5 +1,7 @@
 # Cyra Discord Bot
 
+Every project file is located directly in the repository root.
+
 Cyra is a private Discord bot powered by the xAI Responses API. She:
 
 - Responds when mentioned in one designated admin channel.
@@ -9,13 +11,29 @@ Cyra is a private Discord bot powered by the xAI Responses API. She:
 - Runs continuously on Railway.
 - Includes `/ask`, `/reset`, `/mode`, and `/status` commands.
 
+## Files
+
+```text
+.env.example
+.gitignore
+README.md
+package.json
+railway.json
+config.js
+context.js
+index.js
+prompt.js
+utils.js
+xai.js
+```
+
 ## Discord configuration
 
 In the Discord Developer Portal:
 
 1. Open **Bot**.
 2. Enable **Message Content Intent**.
-3. Invite the bot with:
+3. Give Cyra:
    - View Channels
    - Send Messages
    - Read Message History
@@ -45,9 +63,9 @@ ENABLE_WEB_SEARCH=true
 
 ## Deploy
 
-1. Push all files to a private GitHub repository.
+1. Upload all files directly into the root of a private GitHub repository.
 2. In Railway, create a project using **Deploy from GitHub Repo**.
-3. Select this repository.
+3. Select the repository.
 4. Add the Railway variables.
 5. Deploy.
 6. Open the deployment logs and look for:
@@ -65,17 +83,13 @@ Inside the configured admin channel:
 @Cyra is this claim actually true?
 ```
 
-Cyra will read the recent conversation and answer with context.
-
 Commands:
 
 - `/ask question:` Ask Cyra directly.
-- `/reset` Clear the current in-memory conversation state.
+- `/reset` Reset temporary state.
 - `/mode` Display Cyra's active personality.
 - `/status` Confirm Cyra is online.
 
-## Notes about memory
+## Memory
 
-This release uses rolling context from recent Discord messages. It does not yet save permanent memories to a database. Because the context is fetched from Discord when needed, restarting Railway does not erase messages still available in the channel history.
-
-A future version can add Supabase for durable summaries, decisions, assignments, and long-term memories.
+This release uses rolling context from recent Discord messages. It does not yet save permanent memories to a database. Restarting Railway does not erase messages still available in Discord channel history.
