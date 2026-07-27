@@ -1,0 +1,17 @@
+{
+  "name": "cyra-discord-bot",
+  "version": "1.0.0",
+  "description": "Cyra — a context-aware, sarcastic fact-checking Discord bot powered by xAI.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js && node --check src/config.js && node --check src/context.js && node --check src/prompt.js && node --check src/utils.js && node --check src/xai.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "discord.js": "^14.22.1"
+  }
+}
