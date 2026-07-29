@@ -5,7 +5,7 @@ const {
   Client,
   Events,
   GatewayIntentBits,
-  REST,console.log("Cyra boot sequence started.");
+console.log("Cyra boot sequence started.");
 
 const http = require("http");
 const {
