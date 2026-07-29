@@ -561,14 +561,7 @@ client.on(
     }
 
     if (message.author.bot) return;
-
-    // Ignore @here and @everyone mass mentions.
-    if (message.mentions.everyone) {
-      return;
-    }
-
-    // Only respond when Cyra's exact bot user is directly mentioned.
-    if (!message.mentions.users.has(client.user.id)) {
+    if (!message.mentions.has(client.user)) {
       return;
     }
 
