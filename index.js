@@ -5,13 +5,6 @@ const {
   Client,
   Events,
   GatewayIntentBits,
-console.log("Cyra boot sequence started.");
-
-const http = require("http");
-const {
-  Client,
-  Events,
-  GatewayIntentBits,
   REST,
   Routes,
   SlashCommandBuilder,
@@ -569,12 +562,12 @@ client.on(
 
     if (message.author.bot) return;
 
-    // Never activate from @here or @everyone.
+    // Ignore @here and @everyone mass mentions.
     if (message.mentions.everyone) {
       return;
     }
 
-    // Only activate from a direct mention of Cyra's exact user ID.
+    // Only respond when Cyra's exact bot user is directly mentioned.
     if (!message.mentions.users.has(client.user.id)) {
       return;
     }
